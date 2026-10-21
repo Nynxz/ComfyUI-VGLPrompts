@@ -1,0 +1,49 @@
+[project]
+name = "comfyui-vglprompts"
+version = "0.1.0"
+description = "Bria VGL Thales prompts (system + final prompt, images, response schema) for any LLM node."
+authors = [{ name = "Nynxz", email = "contact@nynxz.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = []
+# torch, numpy and pillow ship with ComfyUI; the prompt text is vendored, so bria-vgl (and its
+# litellm/openai tree) is not needed.
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Nynxz/ComfyUI-VGLPrompts"
+BugTracker = "https://github.com/Nynxz/ComfyUI-VGLPrompts/issues"
+
+[tool.comfy]
+PublisherId = "nynxz"
+DisplayName = "VGL Prompts"
+Icon = "https://avatars.githubusercontent.com/u/60878743?v=4"
+Tags = ["bria", "vgl", "fibo", "prompt", "llm", "structured-prompt"]
+Repository = "https://github.com/Nynxz/ComfyUI-VGLPrompts"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["temp", "__pycache__", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM", "BLE", "RUF"]
+ignore = [
+    # `ruff format` owns code line width; E501 only fires on comments/docstrings it leaves alone.
+    "E501",
+    # Typography in prose is deliberate: "->" and "--" appear in tooltips and docstrings users read.
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    # A short if/else is often clearer than a long ternary.
+    "SIM108",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# The tests cannot import the pack until `_harness.load()` has put a ComfyUI checkout on
+# sys.path, so their imports are deliberately below module-level code.
+"tests/*" = ["E402"]
+
+[tool.ruff.format]
+docstring-code-format = true

@@ -1,0 +1,8 @@
+        [EXISTING JSON]:
+        {input_image_vgl}
+
+        [EDIT INSTRUCTIONS]:
+        {user_prompt}
+
+        [TASK]:
+        Use the provided images as visual references, in the order given (image 1 ... image N), and the existing JSON as your baseline. Analyze which element(s) each reference contributes and then generate the new, updated JSON object for the single composed scene described in the instructions above. Do not describe the individual reference images; describe the new scene. Follow all of your system rules.

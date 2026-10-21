@@ -1,0 +1,9 @@
+
+        [EXISTING JSON]:
+        {input_image_vgl}
+
+        [EDIT INSTRUCTIONS]:
+        {user_prompt}
+
+        [TASK]:
+        Use the provided image as a visual reference and the existing JSON as your baseline. Analyze its key elements (like the subject and pose) and then generate the new, updated JSON object for the scene described in the instructions above. Do not describe the reference image itself; describe the new scene. Follow all of your system rules.

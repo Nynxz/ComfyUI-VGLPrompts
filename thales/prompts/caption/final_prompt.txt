@@ -1,0 +1,1 @@
+Analyze the provided image and generate the detailed JSON object as specified in your instructions.

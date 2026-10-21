@@ -1,0 +1,10 @@
+
+        [EXISTING JSON]:
+        {input_vgl}
+
+        [EDIT INSTRUCTIONS]:
+        {user_prompt}
+
+        [TASK]:
+        Generate the new, updated JSON object that incorporates the edit instructions. Follow all system rules for modification, consistency, and formatting.
+        

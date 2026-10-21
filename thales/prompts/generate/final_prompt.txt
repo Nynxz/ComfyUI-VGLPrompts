@@ -1,0 +1,1 @@
+Generate a detailed JSON object, adhering to the expected schema, for an imagined scene based on the following request: {user_prompt}.

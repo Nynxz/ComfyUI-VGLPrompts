@@ -1,0 +1,214 @@
+{
+  "properties": {
+    "short_description": {
+      "type": "STRING"
+    },
+    "objects": {
+      "items": {
+        "properties": {
+          "description": {
+            "type": "STRING"
+          },
+          "location": {
+            "type": "STRING"
+          },
+          "relationship": {
+            "type": "STRING"
+          },
+          "relative_size": {
+            "type": "STRING"
+          },
+          "shape_and_color": {
+            "type": "STRING"
+          },
+          "texture": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "appearance_details": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "number_of_objects": {
+            "nullable": true,
+            "type": "INTEGER"
+          },
+          "pose": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "expression": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "clothing": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "action": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "gender": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "skin_tone_and_texture": {
+            "nullable": true,
+            "type": "STRING"
+          },
+          "orientation": {
+            "nullable": true,
+            "type": "STRING"
+          }
+        },
+        "required": [
+          "description",
+          "location",
+          "relationship",
+          "relative_size",
+          "shape_and_color",
+          "texture",
+          "appearance_details",
+          "number_of_objects",
+          "pose",
+          "expression",
+          "clothing",
+          "action",
+          "gender",
+          "skin_tone_and_texture",
+          "orientation"
+        ],
+        "type": "OBJECT"
+      },
+      "type": "ARRAY"
+    },
+    "background_setting": {
+      "type": "STRING"
+    },
+    "lighting": {
+      "properties": {
+        "conditions": {
+          "type": "STRING"
+        },
+        "direction": {
+          "type": "STRING"
+        },
+        "shadows": {
+          "nullable": true,
+          "type": "STRING"
+        }
+      },
+      "required": [
+        "conditions",
+        "direction",
+        "shadows"
+      ],
+      "type": "OBJECT"
+    },
+    "aesthetics": {
+      "properties": {
+        "composition": {
+          "type": "STRING"
+        },
+        "color_scheme": {
+          "type": "STRING"
+        },
+        "mood_atmosphere": {
+          "type": "STRING"
+        }
+      },
+      "required": [
+        "composition",
+        "color_scheme",
+        "mood_atmosphere"
+      ],
+      "type": "OBJECT"
+    },
+    "photographic_characteristics": {
+      "nullable": true,
+      "properties": {
+        "depth_of_field": {
+          "type": "STRING"
+        },
+        "focus": {
+          "type": "STRING"
+        },
+        "camera_angle": {
+          "type": "STRING"
+        },
+        "lens_focal_length": {
+          "type": "STRING"
+        }
+      },
+      "required": [
+        "depth_of_field",
+        "focus",
+        "camera_angle",
+        "lens_focal_length"
+      ],
+      "type": "OBJECT"
+    },
+    "style_medium": {
+      "type": "STRING"
+    },
+    "text_render": {
+      "items": {
+        "properties": {
+          "text": {
+            "type": "STRING"
+          },
+          "location": {
+            "type": "STRING"
+          },
+          "size": {
+            "type": "STRING"
+          },
+          "color": {
+            "type": "STRING"
+          },
+          "font": {
+            "type": "STRING"
+          },
+          "appearance_details": {
+            "nullable": true,
+            "type": "STRING"
+          }
+        },
+        "required": [
+          "text",
+          "location",
+          "size",
+          "color",
+          "font",
+          "appearance_details"
+        ],
+        "type": "OBJECT"
+      },
+      "type": "ARRAY"
+    },
+    "context": {
+      "type": "STRING"
+    },
+    "artistic_style": {
+      "type": "STRING"
+    },
+    "edit_instruction": {
+      "type": "STRING"
+    }
+  },
+  "required": [
+    "short_description",
+    "objects",
+    "background_setting",
+    "lighting",
+    "aesthetics",
+    "photographic_characteristics",
+    "style_medium",
+    "text_render",
+    "context",
+    "artistic_style",
+    "edit_instruction"
+  ],
+  "type": "OBJECT"
+}

@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/Bria-AI/vgl",
+  "path": "src/bria_vgl/dialects/thales",
+  "ref": "dev",
+  "commit": "fa95e13dde47e7872b184180607376e843e69d67",
+  "license": "MIT, see LICENSE.bria-vgl"
+}
