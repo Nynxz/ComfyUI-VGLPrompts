@@ -1,7 +1,6 @@
 """The Thales prompts and the two nodes, against a real ComfyUI checkout.
 
 COMFY_ROOT=/path/to/ComfyUI python tests/test_thales.py
-
 """
 
 from __future__ import annotations
