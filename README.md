@@ -88,18 +88,22 @@ can't stray. Most ComfyUI LLM nodes — Generate Text included — can't enforce
 ## Fidelity
 
 With `schema_in_prompt` off, every payload renders byte-for-byte the system and final prompt
-`bria_vgl`'s own renderer produces, with and without a style preset; Parse VGL and the JSON Schema
-conversion match upstream exactly too. `tools/verify_upstream.py` checks all of it.
+`bria_vgl`'s own renderer produces, with and without a style preset, and VGLs are normalised as
+upstream does. `tools/verify_upstream.py` checks it against a vgl checkout.
 
 ## Development
 
 `thales/` is vendored from [Bria-AI/vgl](https://github.com/Bria-AI/vgl) (MIT,
 `thales/LICENSE.bria-vgl`) at the commit in `thales/UPSTREAM.json` — the prompt text only, so
-`bria-vgl` and its litellm/openai dependencies are not needed.
+`bria-vgl` and its litellm/openai dependencies are not needed. Nothing in the pack touches the
+network.
+
+To update it from a checkout of vgl:
 
 ```bash
-python tools/sync_thales.py [ref]                      # refresh thales/ from upstream (default: dev)
-python tools/verify_upstream.py /path/to/vgl           # byte-for-byte parity with a vgl checkout
+cp -r /path/to/vgl/src/bria_vgl/dialects/thales/{prompts,input_schema,output_schema} thales/
+cp /path/to/vgl/LICENSE thales/LICENSE.bria-vgl     # then set the commit in thales/UPSTREAM.json
+python tools/verify_upstream.py /path/to/vgl           # byte-for-byte parity with that checkout
 COMFY_ROOT=/path/to/ComfyUI python tests/test_thales.py
 ```
 

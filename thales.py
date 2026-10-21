@@ -6,8 +6,8 @@ guide from `thales/input_schema/` (rendered into `{llm_input_schema}`), and an o
 that choice and the rendering exactly, so an LLM node in ComfyUI receives the same system and
 final prompt `bria_vgl.create` / `bria_vgl.modify` would send.
 
-The text files are vendored from the upstream repo at the commit in `thales/UPSTREAM.json`;
-`tools/sync_thales.py` refreshes them. The functions below are ports of upstream's:
+The text files are vendored from the upstream repo at the commit in `thales/UPSTREAM.json`
+(see the README to update them). The functions below are ports of upstream's:
 
     render / compose_system_prompt   bria_vgl/prompting.py
     clean_vgl / vgl_json             bria_vgl/payload.py (Payload.parse + vgl_json)

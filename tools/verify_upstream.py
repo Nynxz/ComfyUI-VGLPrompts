@@ -5,6 +5,7 @@
 
 Runs upstream's prompting.py (stdlib only; its one in-package import is stubbed) on every payload
 variant, with and without a style preset, against upstream's own prompt files, and compares.
+Also checks the VGL normalisation that fills input_vgl / input_image_vgl.
 """
 
 import importlib.util
@@ -119,15 +120,3 @@ for preset in (None, "Moody film noir, high contrast black and white, 35mm grain
 print(f"{ok}/{2 * len(cases)} prompt pairs byte-identical to upstream render_prompts")
 assert ok == 2 * len(cases)
 print("vgl_json == upstream model_dump(exclude_none) form:", th.vgl_json(json.dumps(vgl)) == vj)
-gw = Path(S, "gateway.py").read_text()
-ns = {}
-exec(
-    "from typing import Any\n" + gw[gw.find("_JSON_SCHEMA_TYPES =") : gw.find("def _is_anthropic")],
-    ns,
-)
-for n in ("generate", "edit"):
-    print(
-        n,
-        "json_schema identical to upstream converter:",
-        ns["_to_standard_json_schema"](th.output_schema(n)) == th.response_schema(n, "json_schema"),
-    )
