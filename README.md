@@ -89,7 +89,7 @@ can't stray. Most ComfyUI LLM nodes — Generate Text included — can't enforce
 
 With `schema_in_prompt` off, every payload renders byte-for-byte the system and final prompt
 `bria_vgl`'s own renderer produces, with and without a style preset, and VGLs are normalised as
-upstream does. `tools/verify_upstream.py` checks it against a vgl checkout.
+upstream does (checked against upstream's renderer at the vendored commit).
 
 ## Development
 
@@ -103,9 +103,7 @@ To update it from a checkout of vgl:
 ```bash
 cp -r /path/to/vgl/src/bria_vgl/dialects/thales/{prompts,input_schema,output_schema} thales/
 cp /path/to/vgl/LICENSE thales/LICENSE.bria-vgl     # then set the commit in thales/UPSTREAM.json
-python tools/verify_upstream.py /path/to/vgl           # byte-for-byte parity with that checkout
 COMFY_ROOT=/path/to/ComfyUI python tests/test_thales.py
 ```
 
-A new payload or placeholder upstream needs a matching entry in `thales.py`; `verify_upstream.py`
-is how you find out.
+A new payload or placeholder upstream needs a matching entry in `thales.py`.

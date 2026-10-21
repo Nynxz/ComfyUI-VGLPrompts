@@ -1,9 +1,7 @@
 """The Thales prompts and the two nodes, against a real ComfyUI checkout.
 
-    COMFY_ROOT=/path/to/ComfyUI python tests/test_thales.py
+COMFY_ROOT=/path/to/ComfyUI python tests/test_thales.py
 
-Byte-for-byte parity with upstream's renderer is checked separately by
-`tools/verify_upstream.py`, which needs a checkout of Bria-AI/vgl.
 """
 
 from __future__ import annotations
